@@ -1,7 +1,8 @@
 # Use the pre-built base image for A0
 # FROM agent-zero-base:local
 # FROM agent0ai/agent-zero-base:testing
-FROM agent0ai/agent-zero-base:latest
+ARG BASE_IMAGE=agent-zero-base:local
+FROM ${BASE_IMAGE}
 
 # Check if the argument is provided, else throw an error
 ARG BRANCH

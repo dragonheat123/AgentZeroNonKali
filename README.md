@@ -70,6 +70,25 @@ irm https://ps.agent-zero.ai | iex
 docker run -p 80:80 agent0ai/agent-zero
 ```
 
+### Build a Non-Kali Image (Ubuntu Base)
+
+If you want to run Agent Zero on a standard Linux image (for example Ubuntu) instead of Kali:
+
+1. Build the local base image from `docker/base/Dockerfile`:
+```bash
+docker build -f docker/base/Dockerfile -t agent-zero-base:local docker/base
+```
+
+2. Use the local base image in `DockerfileLocal`:
+```dockerfile
+FROM agent-zero-base:local
+```
+
+3. Build the local Agent Zero runtime image:
+```bash
+docker build -f DockerfileLocal -t agent-zero-nonkali --build-arg CACHE_DATE=$(date +%Y-%m-%d:%H:%M:%S) .
+```
+
 A detailed setup guide for Windows, macOS, and Linux can be found in the Agent Zero Documentation at [this page](./docs/setup/installation.md).
 
 

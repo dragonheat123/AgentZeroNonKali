@@ -1,7 +1,13 @@
 services:
   agent-zero:
     container_name: agent-zero
-    image: agent0ai/agent-zero:latest
+    image: agent-zero-nonkali
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BASE_IMAGE: agent-zero-base:local
+        BRANCH: main
     volumes:
       - ./agent-zero:/a0
     ports:
