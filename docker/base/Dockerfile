@@ -1,5 +1,6 @@
-# Use the latest slim version of Kali Linux
-FROM kalilinux/kali-rolling
+# Use a standard Ubuntu Linux base image (override with --build-arg BASE_IMAGE=...)
+ARG BASE_IMAGE=ubuntu:24.04
+FROM ${BASE_IMAGE}
 
 
 # Set locale to en_US.UTF-8 and timezone to UTC

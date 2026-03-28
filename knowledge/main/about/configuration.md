@@ -46,7 +46,7 @@ Profiles are in `agents/<profile>/`. Each profile can override any prompt fragme
 | `agent0` | Top-level general assistant; human as superior; delegates to specialized subordinates |
 | `developer` | "Master Developer" - software architecture and full-stack implementation focus |
 | `researcher` | "Deep Research" - research, analysis, and synthesis across academic and corporate domains |
-| `hacker` | Red/blue team; penetration testing; Kali tools focus |
+| `hacker` | Red/blue team; penetration testing; Linux security tools focus |
 | `_example` | Minimal example for building custom profiles |
 
 Custom profiles go in `usr/agents/<profile>/` to survive framework updates.

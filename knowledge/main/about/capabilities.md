@@ -2,9 +2,9 @@
 
 ## Code Execution
 
-The agent can write and execute code in any language available in the Docker container. The execution environment is a Kali Linux container with two Python runtimes:
+The agent can write and execute code in any language available in the Docker container. The execution environment is a Linux container with two Python runtimes:
 - `/opt/venv-a0` (Python 3.12) - the Agent Zero framework runtime
-- `/opt/venv` (Python 3.13) - the agent's execution runtime (default for agent-run code)
+- `/opt/venv` (system Python) - the agent's execution runtime (default for agent-run code)
 
 The agent installs packages into the execution runtime (`/opt/venv`) via `pip install`. Packages needed by the framework itself must target `/opt/venv-a0`.
 
@@ -14,12 +14,12 @@ Code runs in the terminal with real-time output streaming. Long-running processe
 
 ## Terminal and System Operations
 
-The agent has full root access to the Kali Linux Docker container. It can:
+The agent has full root access to the Linux Docker container. It can:
 - Install packages via `apt`, `pip`, `npm`, and other package managers
 - Create, read, write, move, and delete files anywhere in the container
 - Run any system command, manage processes, set up services
 - Access the network (HTTP requests, SSH, port scanning, etc.)
-- Use Kali Linux security tools pre-installed in the container
+- Use security tools installed in the container image
 
 ## Skills (SKILL.md Standard)
 

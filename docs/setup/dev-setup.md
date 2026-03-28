@@ -126,7 +126,7 @@ This is how it looks in my example: port `80` is mapped to `8880` on the host an
 2. Set the `RFC Password` field to a new password and save.
 3. Open the "Settings" page in the Web UI of your local instance and go in the "Development" section.
 4. Here set the `RFC Password` field to the same password you used in the dockerized instance. Also set the SSH port and HTTP port the same numbers you used when creating the container - in my case `8822` for SSH and `8880` for HTTP. The `RFC Destination URL` will most probably stay `localhost` as both instances are running on the host machine.
-5. Click save and test by asking your agent to do something in the terminal, like "Get current OS version". It should be able to communicate with the dockerized instance via RFC and SSH and execute the command there, responding with something like "Kali GNU/Linux Rolling".
+5. Click save and test by asking your agent to do something in the terminal, like "Get current OS version". It should be able to communicate with the dockerized instance via RFC and SSH and execute the command there, responding with your configured Linux distribution (for example, Ubuntu).
 
 My Dockerized instance:
 ![Dockerized instance](res/dev/devinst-14.png)
